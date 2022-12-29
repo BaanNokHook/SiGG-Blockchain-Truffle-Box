@@ -1,0 +1,34 @@
+{
+  "name": "loaffinity-truffle-box",
+  "version": "1.0.0",
+  "description": "This box comes with everything you need to get started with loaffinity",
+  "keywords": [
+    "loaffinity",
+    "truffle"
+  ],
+  "scripts": {
+    "clean": "npx truffle networks --clean && rm -rf build",
+    "compile": "npx truffle compile",
+    "develop": "npx truffle develop",
+    "test:all": "npx truffle test",
+    "test:lrc20": "npx truffle test ./test/lrc20token.test.js",
+    "test:lrc721": "npx truffle test ./test/lrc721token.test.js",
+    "test:lrc1155": "npx truffle test ./test/lrc1155token.test.js",
+    "deploy:lrc20:dev": "npx truffle migrate --network development --f 2 --to 2",
+    "deploy:lrc721:dev": "npx truffle migrate --network development --f 3 --to 3",
+    "deploy:lrc1155:dev": "npx truffle migrate --network development --f 4 --to 4",
+    "deploy:delegate:dev": "npx truffle migrate --network development --f 5 --to 5",
+    "deploy:lrc20:janus": "npx truffle migrate --network janus --f 2 --to 2",
+    "deploy:lrc721:janus": "npx truffle migrate --network janus --f 3 --to 3",
+    "deploy:lrc1155:janus": "npx truffle migrate --network janus --f 4 --to 4",
+    "deploy:delegate:janus": "npx truffle migrate --network janus --f 5 --to 5"
+  },
+  "license": "MIT License",
+  "main": "truffle-config.js",
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.3.2",
+    "@openzeppelin/contracts-upgradeable": "^4.4.1",
+    "dotenv": "^10.0.0",
+    "truffle": "^5.4.18"
+  }
+}
